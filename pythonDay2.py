@@ -1,10 +1,7 @@
 import random
 import sys
-import re
 
 i = 0
-
-# parent class 1
 
 
 class hotel:
@@ -19,23 +16,14 @@ class hotel:
         self.price = []
         self.room_number = []
         self.customer_id = []
-    # Function for booking
 
     def booking(self):
 
         global i
-        # input details
         print("\t\tRoom Booking")
         print("\t-------------------")
         n = str(input("\tEnter Name\t"))
-        while 1:
-            ph = str(input("\tEnter phone number\t"))
-            # regular expression to match phone number
-            reg = re.match("[1-9]{10}", ph)
-            print("\n\t", reg)
-            if reg is not None:
-                break
-            print("\n\tInvalid mobile number")
+        ph = str(input("\tEnter phone number\t"))
         a = str(input("\tEnter address\t"))
         d = int(input("\tEnter number of days\t"))
         self.name.append(n)
@@ -72,7 +60,6 @@ class hotel:
             print("\n price : Rs. 4500")
         else:
             print("wrong Entry")
-        # allocating room no and id
         room_n = random.randrange(99)+100
         cust_id = random.randrange(99)+1000
         while room_n in self.room or cust_id in self.customer_id:
@@ -89,7 +76,6 @@ class hotel:
             self.home()
         else:
             exit()
-    # function for calculating bill
 
     def payment(self):
 
@@ -141,8 +127,6 @@ class hotel:
             self.home()
         else:
             exit()
-
-# parent class 2
 
 
 class details:
@@ -201,11 +185,8 @@ class details:
         if ch == 0:
             self.rooms_info()
 
-# child class of class 1 and class 2
-
 
 class menu(hotel, details):
-    # function for inputting user choice
 
     def home(self):
 
