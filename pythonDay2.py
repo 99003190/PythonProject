@@ -1,5 +1,6 @@
 import random
 import sys
+import re
 
 i = 0
 
@@ -28,6 +29,9 @@ class hotel:
         print("\t-------------------")
         n = str(input("\tEnter Name\t"))
         ph = str(input("\tEnter phone number\t"))
+        
+        # regular expression to match phone number
+        print(re.match("[1-9]{10}",ph))
         a = str(input("\tEnter address\t"))
         d = int(input("\tEnter number of days\t"))
         self.name.append(n)
