@@ -28,10 +28,14 @@ class hotel:
         print("\t\tRoom Booking")
         print("\t-------------------")
         n = str(input("\tEnter Name\t"))
-        ph = str(input("\tEnter phone number\t"))
-        
-        # regular expression to match phone number
-        print(re.match("[1-9]{10}",ph))
+        while 1:
+            ph = str(input("\tEnter phone number\t"))
+            # regular expression to match phone number
+            reg = re.match("[1-9]{10}", ph)
+            print("\n\t", reg)
+            if reg is not None:
+                break
+            print("\n\tInvalid mobile number")
         a = str(input("\tEnter address\t"))
         d = int(input("\tEnter number of days\t"))
         self.name.append(n)
